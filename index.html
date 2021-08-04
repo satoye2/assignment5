@@ -71,7 +71,7 @@
 
 							{ style: function(feature) 
 
-								{ var conditionalColor, loans = feature.properties.loan_balance, population = feature.properties.pop_borrowed;
+								{ var conditionalColor; var loans = feature.properties.loan_balance; var pop = feature.properties.pop_borrowed;
 
 									if( 26000 < loans/pop < 31000) conditionalColor = "#f1eef6";
 	  								else if( 31000 < loans/pop < 36000) conditionalColor = "#045a8d";
