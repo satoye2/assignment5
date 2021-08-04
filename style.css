@@ -101,8 +101,8 @@ body {
 
 .legend{ 
 	width: 300px;
-	right: 50px;
-	bottom: 160px;
+	right: 30px;
+	bottom: 140px;
 	position: fixed;
 	background-color: #D9D9D9;
  }
@@ -111,7 +111,7 @@ body {
 	width: 325px;
 	display: inline-block;
 	left: 78px;
-	bottom:100px;
+	bottom:150px;
 	position: fixed;
 	color: dimgray;
 	max-height: 300px;
