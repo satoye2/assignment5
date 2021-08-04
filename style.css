@@ -99,6 +99,13 @@ body {
 	margin: 0px;
 }
 
+.legend{ 
+	width: 200px;
+	right: 70px;
+	bottom: 160px;
+	position: fixed;
+ }
+
 .introtext{
 	width: 325px;
 	display: inline-block;
