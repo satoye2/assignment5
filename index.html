@@ -82,6 +82,10 @@
 									else conditionalColor = "#f7f7f7";
 
 									return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .6 };
+								},
+
+								onEachFeature: function( feature, layer ){
+									layer.bindPopup("Name: " feature.properties.NAME + "Balance (in billions): " + feature.properties.loan_balance + "<br/>" + "Borrowers (in thousands): " + feature.properties.pop_borrowed)
 								}
 							}
 
