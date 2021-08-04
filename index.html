@@ -48,7 +48,7 @@
 					<div class="introtext">
 					<h1> Average Student Loan Balance <br> per Borrower</h1>
 					<h2> Data as of March 31, 2021 </h2>
-					<p>This Leaflet map shows the route I take to get from my house to Woodridge Mall.</p></div>
+					<p>This map shows the average student loan balance per borrower by State.</p></div>
 
 			
 
@@ -82,7 +82,7 @@ $.getJSON("Loan_Portfolio.geojson",function(data){
 				return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .8 };
 				},
 				onEachFeature: function( feature, layer ){
-				    layer.bindPopup( feature.properties.NAME + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
+				    layer.bindPopup( "<b>" feature.properties.NAME "</b>" + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
 				}
   					}  ).addTo(map).bringToBack();
 				}); 
