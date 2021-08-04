@@ -103,8 +103,7 @@ body {
 	width: 325px;
 	display: inline-block;
 	left: 130px;
-	top: 45%;
-
+	top: 47%;
 	position: fixed;
 	color: #333333;
 	max-height: 300px;
@@ -125,7 +124,7 @@ body {
 	position: relative;
 	display: inline-block;
 	float: left;
-	min-height:550px;
+	min-height:575px;
 	height: 100%;
 	z-index: -1;
 }
