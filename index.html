@@ -77,7 +77,7 @@
 							}).addTo(myMap);
 						// add GEOJSON
 						$.getJson("Join_Features_to_US_Boundaries2.json",function(data){
-							L.geojson(data).addTo(myMap);
+							L.json(data).addTo(myMap);
 						});
 
 					</script>
