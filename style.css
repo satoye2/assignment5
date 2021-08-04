@@ -56,8 +56,9 @@ li a:hover {
 	margin: 10px 15px 0 0;
 }
 
-.body{
-margin: 55px 0px 0px 0px;
+.body {
+
+margin: 100px 0px 0px 0px;
 }
 
 
@@ -137,6 +138,7 @@ body {
 	min-height:700px;
 	height: 100vh;
 	z-index: -1;
+
 }
 
 .source {
