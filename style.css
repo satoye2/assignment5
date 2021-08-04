@@ -102,8 +102,8 @@ body {
 .introtext{
 	width: 325px;
 	display: inline-block;
-	left: 130px;
-	bottom:130px;
+	left: 100px;
+	bottom:100px;
 	position: fixed;
 	color: #333333;
 	max-height: 300px;
