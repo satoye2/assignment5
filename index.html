@@ -88,13 +88,12 @@ $.getJSON("Loan_Portfolio.geojson",function(data){
 				}); 
 
 
-// load Chicago ELC GeoJSON File
 $.getJSON("EarlyLearningPrograms_Chicago.geojson",function(data){
 	L.geoJSON(data, {
 		pointToLayer: function(feature, latlng) {
 			return new L.CircleMarker(latlng, 
 				{	radius: 3,
-					fillOpacity: 2,
+					fillOpacity: 0,
 					fillColor: 'red',
 					color: 'orange',
 					weight: .5, 
