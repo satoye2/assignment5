@@ -75,22 +75,34 @@
 							subdomains: 'abcd',
 							accessToken: 'RbTQvk3gGa1chPMiHIqo0ISvj0gpPwMP2Lpbb53AgxvuAhiuxgIWdJmVSc3UN6gJ'
 							}).addTo(myMap);
+						
 						// add GEOJSON
+						
 						$.getJSON("Join_Features_to_US_Boundaries.geojson",function(data){
-  						L.geoJson(data{
-  							style: function(feature){
-  								var conditionalColor;
-  								var loan_balance = feaure.properties.LI;
-  								var pop_borrowed = feaure.properties.PI;
+  						
+	  						L.geoJson(data, {
+	  							
+	  							style: function(feature){
+	  								
+	  								var conditionalColor
+	  								var loan_balance = feaure.properties.LI;
+	  								var pop_borrowed = feaure.properties.LI;
 
-  									if( 26000 < loan_balance/pop_borrowed < 31000) conditionalColor = "#045a8d";
-  									return{
-  										color: "gray",
-  										weight: 1,
-  										fillColor: conditionalColor,
-  										fillOpacity:.6, };
-  							}
-  						}).addTo(myMap).bringToBack();
+	  									if( 26000 < loan_balance/pop_borrowed < 31000) conditionalColor = "#f1eef6";
+	  									else if( 31000 < loan_balance/pop_borrowed < 36000) conditionalColor = "#045a8d";
+	  									else if( 36000 < loan_balance/pop_borrowed < 41000) conditionalColor = "#a6bddb";
+	  									else if( 41000 < loan_balance/pop_borrowed < 46000) conditionalColor = "#74a9cf";
+	  									else if( 46000 < loan_balance/pop_borrowed < 51000) conditionalColor = "#2b8cbe";
+	  									else if( 51000 < loan_balance/pop_borrowed < 56000) conditionalColor = "#045a8d";
+
+	  									return{
+	  									color: "gray",
+	  									weight: 1,
+	  									fillColor: conditionalColor,
+	  									fillOpacity:.6,};
+	  							},
+
+	  						}).addTo(myMap).bringToBack();
 						
 						}); 
 
