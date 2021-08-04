@@ -125,7 +125,7 @@ body {
 	position: relative;
 	display: inline-block;
 	float: left;
-	min-height:640px;
+	min-height:600px;
 	height: 100%;
 	z-index: -1;
 }
