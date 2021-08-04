@@ -66,31 +66,26 @@
 						).addTo(myMap);
 						
 						// add GEOJSON
-						$.getJSON("Join_Features_to_US_Boundaries.geojson",function(data)
-						{ L.geoJson(data,
+						
+						$.getJSON("Join_Features_to_US_Boundaries.geojson",function(data){ 
+							
+							L.geoJson(data,{ 
+								
+								style: function(feature){ 
+									
+									var conditionalColor, 
+									    
+									    pop = feature.properties.pop_borrowed;
 
-							{ style: function(feature) 
-
-								{ var conditionalColor, loans = feature.properties.loan_balance, pop = feature.properties.pop_borrowed;
-
-									if( 26000 < loans/pop < 31000) conditionalColor = "#f1eef6";
-	  								else if( 31000 < loans/pop < 36000) conditionalColor = "#045a8d";
-	  								else if( 36000 < loans/pop < 41000) conditionalColor = "#a6bddb";
-	  								else if( 41000 < loans/pop < 46000) conditionalColor = "#74a9cf";
-	  								else if( 46000 < loans/pop < 51000) conditionalColor = "#2b8cbe";
-	  								else if( 51000 < loans/pop < 56000) conditionalColor = "#045a8d";
-									else conditionalColor = "#f7f7f7";
-
+									if ( pop < 100000) conditionalColor = "#f1eef6";
+	  								else if( pop > 100000) conditionalColor = "#045a8d";
 									return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .6 };
 								},
 
 								onEachFeature: function( feature, layer ){
 									layer.bindPopup("Name: " feature.properties.NAME + "Balance (in billions): " + feature.properties.loan_balance + "<br/>" + "Borrowers (in thousands): " + feature.properties.pop_borrowed)
 								}
-							}
-
-						).addTo(myMap).bringToBack();
-						
+							} ).addTo(myMap).bringToBack();
 						});
 
 						</script>
