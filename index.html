@@ -80,28 +80,11 @@ $.getJSON("Loan_Portfolio.geojson",function(data){
 				return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .6 };
 				},
 				onEachFeature: function( feature, layer ){
-				    layer.bindPopup( feature.properties.NAME + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
+				    layer.bindPopup( "<b>" feature.properties.NAME "<b>" + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
 				}
   					}  ).addTo(map).bringToBack();
 				}); 
 
-
-// load Chicago ELC GeoJSON File
-$.getJSON("EarlyLearningPrograms_Chicago.geojson",function(data){
-	L.geoJSON(data, {
-		pointToLayer: function(feature, latlng) {
-			return new L.CircleMarker(latlng, 
-				{	radius: 3,
-					fillOpacity: 2,
-					fillColor: 'red',
-					color: 'orange',
-					weight: .5, 
-				});
-		}, onEachFeature: function(feature, layer){
-			layer.bindPopup("<strong>"+ feature.properties.Site_Name + "</strong><br/>" + "Ages Served :" + feature.properties.Ages_Served + "<br/>" + "Accreditation " + feature.properties.Accreditation)
-		}
-	}).addTo(map);
-});
 				 
 </script>
 
