@@ -75,25 +75,7 @@ $.getJSON("ChicagoHardshipIndex.geojson",function(data){
 				}
   					}  ).addTo(map).bringToBack();
 				}); 
-
-
-// load Chicago ELC GeoJSON File
-$.getJSON("EarlyLearningPrograms_Chicago.geojson",function(data){
-	L.geoJSON(data, {
-		pointToLayer: function(feature, latlng) {
-			return new L.CircleMarker(latlng, 
-				{	radius: 3,
-					fillOpacity: 1,
-					fillColor: 'red',
-					color: 'orange',
-					weight: .5, 
-				});
-		}, onEachFeature: function(feature, layer){
-			layer.bindPopup("<strong>"+ feature.properties.Site_Name + "</strong><br/>" + "Ages Served :" + feature.properties.Ages_Served + "<br/>" + "Accreditation " + feature.properties.Accreditation)
-		}
-	}).addTo(map);
-});
-				 
+			 
 </script>
 
 </div>
