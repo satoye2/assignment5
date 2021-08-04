@@ -82,7 +82,7 @@ $.getJSON("Loan_Portfolio.geojson",function(data){
 				return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .8 };
 				},
 				onEachFeature: function( feature, layer ){
-				    layer.bindPopup( "<b>" feature.properties.NAME "</b>" + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
+				    layer.bindPopup( feature.properties.NAME + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
 				}
   					}  ).addTo(map).bringToBack();
 				}); 
