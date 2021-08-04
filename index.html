@@ -50,7 +50,9 @@
 					<h2> Data as of March 31, 2021 </h2>
 					<p>This Leaflet map shows the route I take to get from my house to Woodridge Mall.</p></div>
 
-						<script> 
+			
+
+<script> 
 
 // initialize your map here 
 var map = L.map('map').setView([37.0902,-95.7129], 4);
@@ -80,12 +82,13 @@ $.getJSON("Loan_Portfolio.geojson",function(data){
 				return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .6 };
 				},
 				onEachFeature: function( feature, layer ){
-				    layer.bindPopup( "<b>" feature.properties.NAME "<b>" + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
+				    layer.bindPopup( feature.properties.NAME + "<br/>" + "Total Balance (in US dollars): " + feature.properties.loan_balance + "<br/>" + "Borrowers: " + feature.properties.pop_borrowed + "<br/>" + "Average Balance per Borrower: " + feature.properties.avg_balance )
 				}
   					}  ).addTo(map).bringToBack();
 				}); 
-							
-							// load Chicago ELC GeoJSON File
+
+
+// load Chicago ELC GeoJSON File
 $.getJSON("EarlyLearningPrograms_Chicago.geojson",function(data){
 	L.geoJSON(data, {
 		pointToLayer: function(feature, latlng) {
@@ -100,6 +103,7 @@ $.getJSON("EarlyLearningPrograms_Chicago.geojson",function(data){
 			layer.bindPopup("<strong>"+ feature.properties.Site_Name + "</strong><br/>" + "Ages Served :" + feature.properties.Ages_Served + "<br/>" + "Accreditation " + feature.properties.Accreditation)
 		}
 	}).addTo(map);
+});
 
 				 
 </script>
