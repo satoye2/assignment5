@@ -76,9 +76,23 @@
 							accessToken: 'RbTQvk3gGa1chPMiHIqo0ISvj0gpPwMP2Lpbb53AgxvuAhiuxgIWdJmVSc3UN6gJ'
 							}).addTo(myMap);
 						// add GEOJSON
-				$.getJSON("Join_Features_to_US_Boundaries.geojson",function(data){
-  					L.geoJson(data).addTo(myMap).bringToBack();
-				}); 
+						$.getJSON("Join_Features_to_US_Boundaries.geojson",function(data){
+  						L.geoJson(data{
+  							style: function(feature){
+  								var conditionalColor;
+  								var loan_balance = feaure.properties.LI;
+  								var pop_borrowed = feaure.properties.PI;
+
+  									if( 26000 < loan_balance/pop_borrowed < 31000) conditionalColor = "#045a8d";
+  									return{
+  										color: "gray",
+  										weight: 1,
+  										fillColor: conditionalColor,
+  										fillOpacity:.6, };
+  							}
+  						}).addTo(myMap).bringToBack();
+						
+						}); 
 
 					</script>
 
